@@ -4,6 +4,11 @@ const weatherLoaded = (city) => {
         payload: city
     };
 };
+const weatherRequested = () => {
+    return {
+        type: 'WEATHER_REQUSTED'
+    };
+};
 const changeBackground = (newBg) => {
     return {
         type: 'CHANGE_BACKGROUND',
@@ -13,5 +18,6 @@ const changeBackground = (newBg) => {
 
 export {
     weatherLoaded,
+    weatherRequested,
     changeBackground
 };

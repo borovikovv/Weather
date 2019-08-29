@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import compose from './../../utils/compose';
 import Spinner from './../spinner/spinner';
-import { weatherLoaded } from './../../actions/actions';
+import { weatherLoaded, weatherRequested } from './../../actions/actions';
 import withWeatherService from './../hoc/withWeatherService';
 import './weather-page.css';
 
@@ -25,7 +24,8 @@ const setCity = 'Portland';
 class WeatherPageContainer extends Component {
 
     componentDidMount() {
-        const { weatherService, weatherLoaded } = this.props;
+        const { weatherService, weatherLoaded, weatherRequested } = this.props;
+        weatherRequested();
         weatherService.getCity(setCity)
         .then((data) => weatherLoaded(data));
     }
@@ -44,10 +44,9 @@ const mapStateToProps = ({city, loading}) => {
     return { city, loading};
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return (
-        bindActionCreators({weatherLoaded}, dispatch)
-    );
+const mapDispatchToProps = {
+    weatherRequested,
+    weatherLoaded
 };
 
 
