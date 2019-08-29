@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import compose from './../../utils/compose';
 import Spinner from './../spinner/spinner';
-import { weatherLoaded, weatherRequested } from './../../actions/actions';
+import { weatherLoaded, weatherRequested, changeBackground } from './../../actions/actions';
 import withWeatherService from './../hoc/withWeatherService';
 import './weather-page.css';
 
 const WeaherPage = ({cityProps = {}}) => {
 
     const {name, celsius, wind, description} = cityProps;
+
     console.log(cityProps);
     return (
         <div className='weather-details'>
@@ -24,7 +25,9 @@ const setCity = 'Portland';
 class WeatherPageContainer extends Component {
 
     componentDidMount() {
-        const { weatherService, weatherLoaded, weatherRequested } = this.props;
+        const { weatherService,
+                weatherLoaded,
+                 weatherRequested } = this.props;
         weatherRequested();
         weatherService.getCity(setCity)
         .then((data) => weatherLoaded(data));

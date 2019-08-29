@@ -1,17 +1,16 @@
-
 .weather-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 2.3rem;
-}
-    .description {
-        color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 2.3rem;
     }
-    .name {
-        font-weight: bold;
-    }
+        .description {
+            color: grey;
+        }
+        .name {
+            font-weight: bold;
+        }
     .sunny {
         background-image: linear-gradient(to right top, #ff4e50, #ff713e, #ff932b, #ffb41d, #f9d423);
     }

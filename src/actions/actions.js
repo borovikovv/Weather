@@ -9,15 +9,8 @@ const weatherRequested = () => {
         type: 'WEATHER_REQUSTED'
     };
 };
-const changeBackground = (newBg) => {
-    return {
-        type: 'CHANGE_BACKGROUND',
-        payload: newBg
-    };
-};
 
 export {
     weatherLoaded,
-    weatherRequested,
-    changeBackground
+    weatherRequested
 };

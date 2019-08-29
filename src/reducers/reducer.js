@@ -2,7 +2,7 @@ const initialState = () => {
     return {
         city: [],
         loading: true,
-        changeBackground: ''
+        changeBackground: null
     };
 };
 
@@ -15,12 +15,6 @@ const reducer = (state = initialState, action) => {
             }
         case 'WEATHER_LOADED':
             return{
-                city: action.payload,
-                loading: false
-            };
-        case 'CHANGE_BACKGROUND':
-            return {
-                changeBackground: action.payload,
                 city: action.payload,
                 loading: false
             };
