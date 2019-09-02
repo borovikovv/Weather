@@ -1,18 +1,17 @@
 const initialState = () => {
     return {
         city: [],
-        loading: true,
-        changeBackground: null
+        loading: true
     };
 };
 
-const reducer = (state = initialState, action) => {
+const WeatherReducer = (state = initialState, action) => {
     switch(action.type){
         case 'WEATHER_REQUSTED':
             return{
                 city: [],
                 loading: true
-            }
+            };
         case 'WEATHER_LOADED':
             return{
                 city: action.payload,
@@ -23,4 +22,4 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-export default reducer;
+export default WeatherReducer;
