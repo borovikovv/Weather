@@ -19,12 +19,12 @@ export default class WeatherService {
 
     _transformCity = (cityWeather) => {
         return {
+            name: cityWeather.name,
             celsius: Math.round(parseFloat(cityWeather.main.temp)-273.15),
             fahrenheit: Math.round(((parseFloat(cityWeather.main.temp)-273.15)*1.8)+32),
             description: cityWeather.weather[0].description,
             wind: cityWeather.wind.speed,
             id: cityWeather.id,
-            name: cityWeather.name,
             timezone: cityWeather.timezone
         }
     }

@@ -1,15 +1,8 @@
-const initialState = () => {
-    return {
-        city: [],
-        loading: true
-    };
-};
 
-const WeatherReducer = (state = initialState, action) => {
+const WeatherReducer = (state = {}, action) => {
     switch(action.type){
         case 'WEATHER_REQUSTED':
             return{
-                city: [],
                 loading: true
             };
         case 'WEATHER_LOADED':
@@ -17,6 +10,11 @@ const WeatherReducer = (state = initialState, action) => {
                 city: action.payload,
                 loading: false
             };
+        case 'CHANGE_CITY':
+            let newCity = action.payload;
+            return Object.assign({}, state, {
+                city: newCity
+            });
         default:
             return state;
     }
