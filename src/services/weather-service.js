@@ -9,8 +9,8 @@ export default class WeatherService {
             `available ${res.status}`);
         }
     
-        return await res.json();
-    }
+        return await res.json()
+    };
 
     getCity = async (cityName) => {
         const cityWeather = await this.getResourses(`${cityName}`);

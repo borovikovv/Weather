@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import './form.css';
-
-    // const ViewForm = ({changeCity}) => {
-
-    //     const onSubmit = (value) => {
-    //         changeCity(value.cityName);
-    //     };
-
-    //     return(
-    //         <div>
-    //             <h1 className="form-header"> Find city : </h1>
-    //             <FindReduxForm onSubmit={onSubmit} />
-    //         </div>
-    //     )
-    // };
     class FindCityForm extends Component {
 
         render() {
